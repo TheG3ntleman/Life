@@ -29,6 +29,11 @@ void Window::run () {
 
 }
 
+void Window::addDrawCall(void (*drawCall)(sf::RenderWindow*) ) {
+  drawCalls.push_back(drawCall); 
+}
+
 void Window::draw() {
-  
+  for (unsigned int i = 0; i < drawCalls.size(); i++)
+    drawCalls[i](window);
 }

@@ -18,7 +18,7 @@ void Board::update() {
    
 }
 
-char** Board::getBoard() {
-  return board; 
+char Board::operator ()(unsigned int x, unsigned int y) {
+  return board[x][y];
 }
 

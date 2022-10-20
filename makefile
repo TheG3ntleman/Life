@@ -1,7 +1,7 @@
 # Source projects
 
-SOURCE_FILES = src/main.cpp src/window/window.cpp
-OBJ_FILES = src/main.o src/window/window.o
+SOURCE_FILES = src/main.cpp src/window/window.cpp src/life/board.cpp
+OBJ_FILES = src/main.o src/window/window.o src/life/board.o
 EXE_NAME = a
 
 # Compiler and linker options
