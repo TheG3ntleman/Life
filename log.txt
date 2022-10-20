@@ -1,0 +1,10 @@
+Possible idea to save time and space:
+  1. Employ the use of kernals of cells instead of individual cells.
+    A sufficiently small kernal size would have a reasonable small
+    no. of states and would greatly reduce space used to store the board
+    given a sufficiently large board. 
+
+    Furthermore, given a kernal, most of it's cells future state can be
+    predicted and stored in memory. I'm guessing that the boundary cells
+    are the ones that will pose a problem.
+
