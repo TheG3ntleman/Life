@@ -2,27 +2,30 @@
 #define BOARD_HPP
 
 #include <iostream>
-#include <string>
-#include <SFML/Graphics.hpp>
 
 class Board {
 
 public:
 
-  Board(unsigned int side_length);
-  Board(std::string path);
+  Board(unsigned int size);
   ~Board();
 
   void update();
-  char operator ()(unsigned int x, unsigned int y);
+  void print();
+
+  void setCell(char val, unsigned int r, unsigned int c);
+  char getCell(unsigned int r, unsigned int c);
+  // possible function to get a sort of quick buffer for rendering.
 
 private:
-
   unsigned int n;
-  char **board; // can have far more effecient board representation 
-                // by using char and bit operators, then storing cell
-                // states directly into bits and have read/write cell
-                // interface functions.
+  char **board;
+  char **bufferBoard; // Must adjust and tidy up every function
+                      // about this bufferBoard or board stuff.
+  char state = 0; // Introduced to avoid copying 
+                  // after every update.
+
+  char getNeighbors(unsigned int r, unsigned int  c);
 
 };
 
