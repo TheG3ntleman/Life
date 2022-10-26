@@ -1,28 +1,31 @@
-#include <SFML/Graphics.hpp>
-#include <string>
-#include <vector>
-
 #ifndef WINDOW_HPP
 #define WINDOW_HPP
 
-class Window {
-  
-public:
+#include <string.h>
+#include <vector>
 
-  Window(unsigned int w, unsigned int h, std::string title); 
+#include <SFML/Graphics/RenderWindow.hpp>
+#include <SFML/Graphics.hpp>
+
+class Window {
+
+public:
+  Window(unsigned int w, unsigned int h, std::string title);
   ~Window();
 
   void run();
-  void draw();
 
-  void addDrawCall(void (*)(sf::RenderWindow*));
+  void add_draw_call (void (*draw_call)(sf::RenderWindow*));
+  void add_update_call(void (*update_call)());
 
 private:
   sf::RenderWindow *window;
-  sf::VideoMode *videoMode;
-  sf::Event *event;
+  sf::VideoMode *video_mode;
+  sf::Event event;
 
-  std::vector<void (*)(sf::RenderWindow*)> drawCalls; 
+  std::vector<void (*)(sf::RenderWindow*)> draw_calls;
+  std::vector<void (*)()> update_calls;
+
 };
 
 #endif

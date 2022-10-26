@@ -12,24 +12,10 @@
  * eliminate calculting them each time
  * the program starts up.*/
 
-#define KS 8 // kernal size
-typedef long ker; // kernal type def.
-
-class Board {
-
-public:
-
-  Board(unsigned int side_length);
-  ~Board();
-
-  void print();
-  
-
-private:
-  unsigned int n;
-  ker **board;
-  
-
-};
+/*
+ * Instead of using longs and 8x8 kernals
+ * use a general variable along with 
+ * sizeof to make kernals.
+ */
 
 #endif
