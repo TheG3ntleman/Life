@@ -2,6 +2,7 @@
 #define BOARD_HPP
 
 #include <iostream>
+#include "../compile-settings.hpp"
 
 class Board {
 
@@ -11,21 +12,22 @@ public:
   ~Board();
 
   void update();
-  void print();
 
-  void setCell(char val, unsigned int r, unsigned int c);
-  char getCell(unsigned int r, unsigned int c);
+  void set_cell(char val, unsigned int r, unsigned int c);
+  char get_cell(unsigned int r, unsigned int c);
   // possible function to get a sort of quick buffer for rendering.
+
+  // IO Functions
+  void print();
 
 private:
   unsigned int n;
-  char **board;
-  char **bufferBoard; // Must adjust and tidy up every function
-                      // about this bufferBoard or board stuff.
-  char state = 0; // Introduced to avoid copying 
-                  // after every update.
+  char **boards[2];
+  bool state = false;
 
-  char getNeighbors(unsigned int r, unsigned int  c);
+  char get_neighbors(char **board, unsigned int r, unsigned int  c);
+  char **get_board(char state);
+  void toggle_state();
 
 };
 

@@ -15,15 +15,15 @@ int main () {
   //Window window = Window(WINDOW_WIDTH, WINDOW_HEIGHT, "Life");
 
   // Setting board
-  board.setCell(1, 5, 5);
-  board.setCell(1, 5, 6);
-  board.setCell(1, 6, 5);
-  board.setCell(1, 6, 6);
+  board.set_cell(1, 4, 5);
+  board.set_cell(1, 5, 6);
+  board.set_cell(1, 5, 5);
+  board.set_cell(1, 5, 4);
 
 
   // Running life.
 
-  for (unsigned int i = 0; i < 5; i++) {
+  for (unsigned int i = 0; i < 50; i++) {
     board.print();
     board.update();
   }
