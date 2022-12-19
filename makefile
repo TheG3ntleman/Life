@@ -1,14 +1,14 @@
 # Source projects
 
-SOURCE_FILES = src/main.cpp src/window/window.cpp src/life/board.cpp src/life/save.cpp src/life/camera.cpp src/life/kernal-board.cpp
-OBJ_FILES = src/main.o src/window/window.o src/life/board.o src/life/save.o src/life/camera.o src/life/kernal-board.o
-EXE_NAME = a
+SOURCE_FILES = src/main.cpp src/app.cpp 
+OBJ_FILES = src/main.o src/app.o 
+EXE_NAME = sim
 
 # Compiler and linker options
 
-CC = gcc
+CC = g++
 CFLAGS = -Wall -Wextra
-LFGLAS = -lstdc++ -lsfml-graphics -lsfml-window -lsfml-system
+LFGLAS = -lsfml-graphics -lsfml-window -lsfml-system 
 
 # Recipe
 

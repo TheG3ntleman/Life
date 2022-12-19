@@ -2,12 +2,12 @@
 
 // APP CONFIG STUFF
 
-const uint8_t window_x = 800, window_y = 600;
-const std::string window_caption = "Physics Simulation Window";
+const unsigned int windowWidth = 800, windowHeight = 600;
+const std::string windowCaption = "Physics Simulation Window";
 
 int main() {
 
-  App app{};
+  App app{windowWidth, windowHeight, windowCaption};
   app.run();
 
   return 0;
