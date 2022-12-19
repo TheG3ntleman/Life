@@ -1,18 +1,14 @@
-#include <iostream>
+#include "app.hpp"
 
-#include "window/window.hpp"
-#include "life/board.hpp"
-#include "life/save.hpp"
-#include "life/camera.hpp"
+// APP CONFIG STUFF
 
-#define BOARD_SIZE 10
-#define WINDOW_WIDTH 800
-#define WINDOW_HEIGHT 600
+const uint8_t window_x = 800, window_y = 600;
+const std::string window_caption = "Physics Simulation Window";
 
-int main () {
+int main() {
 
-  Window window (WINDOW_WIDTH, WINDOW_HEIGHT, "Life");
-  window.run();
+  App app{};
+  app.run();
 
   return 0;
 }
